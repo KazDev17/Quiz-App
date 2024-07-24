@@ -1,0 +1,21 @@
+1. Private Classes/Variables/Properties and Methods
+* By adding an underscore in front of a class name, you tell Dart that this class is meant to be private
+* Should basically only be usable inside of this file, but if another file would import that Public class it would not be able to access the private class.
+
+2. Getters
+* get summaryData - looks like a variable name, but internally it behaves like a method and can be used like a property (summaryData.where())
+* It can also be used as an alternative to defining a method.
+* It takes another class property- example would be questions and chosenAnswers in results_screen.dart, and then derives some data based on that property.
+
+3. Arrow Functions
+ex code -     final numCorrectQuestions = summaryData.where((data) => data['user_answer'] == data['correct_answer'],).length; 
+original code - final numCorrectQuestions = summaryData.where(
+                    (data) {
+                         return data['user_answer'] == data['correct_answer'];
+                     },
+                 ).length;
+
+* Eliminates complex code and allows you to write more concise code.
+* condition to be met - . a function which might take some input values -(data) 
+                        . and which then immediately returns and performs no other operations inside of the function body.
+* use this approach for functions that only have a return statement in their function body.
